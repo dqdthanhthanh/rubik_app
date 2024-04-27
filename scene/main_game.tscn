@@ -1,0 +1,421 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct23p7ntlvxcc"]
+
+[ext_resource type="Script" path="res://script/rubik.gd" id="1_66wnn"]
+[ext_resource type="PackedScene" uid="uid://bbrhectx7pxp1" path="res://scene/cube.tscn" id="2_8ol5f"]
+[ext_resource type="Theme" uid="uid://cmpsy8vxgehd6" path="res://theme/theme_game_ui.tres" id="3_eodxy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7uq62"]
+
+[sub_resource type="Sky" id="Sky_hqwck"]
+sky_material = SubResource("ProceduralSkyMaterial_7uq62")
+
+[sub_resource type="Environment" id="Environment_n8sh3"]
+background_mode = 2
+sky = SubResource("Sky_hqwck")
+
+[node name="MainGame" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.978623, 0.0088698, 0.205469, -0.128919, 0.804868, 0.579281, -0.160237, -0.593387, 0.788807, 3.8, 11, 15)
+fov = 20.0
+
+[node name="Rubik" type="Node3D" parent="." node_paths=PackedStringArray("scramble_info", "input_control", "btn_scramble", "btn_solve")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
+script = ExtResource("1_66wnn")
+scramble_info = NodePath("../Menu/Label")
+input_control = NodePath("../Menu/GridContainer")
+btn_scramble = NodePath("../Menu/Label/BtnsScramble")
+btn_solve = NodePath("../Menu/Label/BtnsSovle")
+
+[node name="T_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.667, 1, -0.667)
+skeleton = NodePath("..")
+
+[node name="T_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.08165e-12, 1, -0.667)
+skeleton = NodePath("..")
+
+[node name="T_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.667, 1, -0.667)
+skeleton = NodePath("..")
+
+[node name="T_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.667, 1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="T_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.08165e-12, 1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="T_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.667, 1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="T_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.667, 1, 0.667)
+skeleton = NodePath("..")
+
+[node name="T_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.08165e-12, 1, 0.667)
+skeleton = NodePath("..")
+
+[node name="T_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.667, 1, 0.667)
+skeleton = NodePath("..")
+
+[node name="D_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.667, -1, 0.667)
+skeleton = NodePath("..")
+
+[node name="D_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.08165e-12, -1, 0.667)
+skeleton = NodePath("..")
+
+[node name="D_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.667, -1, 0.667)
+skeleton = NodePath("..")
+
+[node name="D_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.667, -1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="D_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.08165e-12, -1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="D_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.667, -1, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="D_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.667, -1, -0.667)
+skeleton = NodePath("..")
+
+[node name="D_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.08165e-12, -1, -0.667)
+skeleton = NodePath("..")
+
+[node name="D_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.667, -1, -0.667)
+skeleton = NodePath("..")
+
+[node name="F_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.667, 0.667, 1)
+skeleton = NodePath("..")
+
+[node name="F_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.667, 1)
+skeleton = NodePath("..")
+
+[node name="F_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.667, 0.667, 1)
+skeleton = NodePath("..")
+
+[node name="F_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.667, 2.08165e-12, 1)
+skeleton = NodePath("..")
+
+[node name="F_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 1)
+skeleton = NodePath("..")
+
+[node name="F_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.667, 2.08165e-12, 1)
+skeleton = NodePath("..")
+
+[node name="F_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.667, -0.667, 1)
+skeleton = NodePath("..")
+
+[node name="F_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.667, 1)
+skeleton = NodePath("..")
+
+[node name="F_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.667, -0.667, 1)
+skeleton = NodePath("..")
+
+[node name="B_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, 0.667, 0.667, -1)
+skeleton = NodePath("..")
+
+[node name="B_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -3.45125e-09, 0.667, -1)
+skeleton = NodePath("..")
+
+[node name="B_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -0.667, 0.667, -1)
+skeleton = NodePath("..")
+
+[node name="B_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, 0.667, 2.08165e-12, -1)
+skeleton = NodePath("..")
+
+[node name="B_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -3.45125e-09, 2.08189e-12, -1)
+skeleton = NodePath("..")
+
+[node name="B_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -0.667, 2.08165e-12, -1)
+skeleton = NodePath("..")
+
+[node name="B_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, 0.667, -0.667, -1)
+skeleton = NodePath("..")
+
+[node name="B_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -3.45125e-09, -0.667, -1)
+skeleton = NodePath("..")
+
+[node name="B_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -0.667, -0.667, -1)
+skeleton = NodePath("..")
+
+[node name="L_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0.667, -0.667)
+skeleton = NodePath("..")
+
+[node name="L_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0.667, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="L_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0.667, 0.667)
+skeleton = NodePath("..")
+
+[node name="L_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 2.08165e-12, -0.667)
+skeleton = NodePath("..")
+
+[node name="L_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 2.08165e-12, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="L_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 2.08165e-12, 0.667)
+skeleton = NodePath("..")
+
+[node name="L_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.667, -0.667)
+skeleton = NodePath("..")
+
+[node name="L_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.667, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="L_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, -0.667, 0.667)
+skeleton = NodePath("..")
+
+[node name="R_00" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.667, 0.667)
+skeleton = NodePath("..")
+
+[node name="R_01" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.667, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="R_02" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0.667, -0.667)
+skeleton = NodePath("..")
+
+[node name="R_03" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 2.08165e-12, 0.667)
+skeleton = NodePath("..")
+
+[node name="R_04" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 2.08165e-12, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="R_05" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 2.08165e-12, -0.667)
+skeleton = NodePath("..")
+
+[node name="R_06" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -0.667, 0.667)
+skeleton = NodePath("..")
+
+[node name="R_07" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -0.667, 2.08165e-12)
+skeleton = NodePath("..")
+
+[node name="R_08" parent="Rubik" instance=ExtResource("2_8ol5f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, -0.667, -0.667)
+skeleton = NodePath("..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n8sh3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="LineEdit" parent="Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_right = 312.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme = ExtResource("3_eodxy")
+text = "R D B2 L2 D2 B2 D2 U' R2 D2 R2 F' U2 R' B F U' F R2"
+placeholder_text = "Enter Scramble..."
+alignment = 1
+virtual_keyboard_enabled = false
+
+[node name="BtnsScramble" type="Button" parent="Menu/Label"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 64.0
+grow_vertical = 0
+theme = ExtResource("3_eodxy")
+text = "Run Scramble"
+
+[node name="BtnsSovle" type="Button" parent="Menu/Label"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_bottom = 64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_eodxy")
+text = "Reset"
+
+[node name="GridContainer" type="GridContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -337.5
+offset_top = -288.0
+offset_right = 337.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 6
+
+[node name="Button" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button2" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button3" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button4" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button5" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button6" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button7" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button8" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button9" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button10" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button11" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button12" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button13" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button14" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button15" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button16" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button17" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
+
+[node name="Button18" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+theme = ExtResource("3_eodxy")
+text = "L"
